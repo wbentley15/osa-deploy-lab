@@ -1,0 +1,74 @@
+#########################################
+#
+# Section #1
+#
+#########################################
+
+# Take Root Sudo role (enter your StudentID password when prompted)
+sudo su
+
+# Review network configuration
+ifconfig
+
+# Examine network interfaces file
+cat /etc/network/interfaces
+
+
+#########################################
+#
+# Section #2
+#
+#########################################
+
+Go to the below URL with your laptops browser:
+https://github.com/wbentley15/osa-cloud-sample
+
+Directory breakdown:
+/lab-environment	playbooks/roles to build a lab environment using Rackspace Public Cloud
+/rpcv12-cloud		playbooks/roles to pre-config an instance for OSA and deploy Liberty
+/rpcv13-cloud		playbooks/roles to pre-config an instance for OSA and deploy Mitaka
+
+Move into the following directory:
+/rpcv13-cloud
+
+
+#########################################
+#
+# Section #3
+#
+#########################################
+
+# On your lab server change into the OSA deployment directory
+cd /etc/openstack_deploy
+
+# Review directory structure
+ls -la
+
+# Examine the configuration files one at a time
+cat openstack_user_config.yml
+cat user_secrets.yml
+cat user_variables.yml
+
+# Change into the conf.d directory
+cd conf.d
+
+# Examine the optional configuration files one at a time
+cat aodh.yml
+cat ceilometer.yml
+
+
+#########################################
+#
+# Section #4
+#
+#########################################
+
+# Change into OSA playbooks directory
+cd /opt/openstack-ansible
+
+# Execute the following OSA playbooks (go grab some coffee, just kidding)
+cd playbooks
+openstack-ansible setup-everything.yml
+
+# Open browser and connect to the OpenStack server IP (if nothing failed but, please smile even if it did)
+https://<OpenStack Server IP>
